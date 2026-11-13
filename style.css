@@ -89,3 +89,55 @@ main{max-width:900px;margin:0 auto;padding:48px 24px;position:relative;z-index:1
 .expertise-featured{grid-column:auto;grid-row:auto;background:var(--bg-surface)}
 .expertise-featured h3{font-size:1rem}
 @media(max-width:560px){.expertise-grid{grid-template-columns:1fr}.expertise-item{min-height:0}}
+
+/* Profile updates, section navigation, and accessible interactions */
+.page-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.page-nav a{padding:8px 12px;border:1px solid var(--border-light);border-radius:var(--radius-sm);font-size:.8rem;color:var(--text-secondary)}
+.page-nav a:hover{background:var(--bg-elevated);color:var(--accent)}
+.text-link{display:inline-block;font-size:.82rem;font-weight:600;text-underline-offset:4px}
+.text-link:hover{text-decoration:underline}
+.cv-contact{font-size:.83rem;margin:8px 0}
+.site-footer .last-updated{font-size:.72rem;margin-top:6px}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(max-width:600px){
+  .site-nav{flex-wrap:wrap;overflow:visible;padding:0 12px}
+  .site-nav a{padding:10px;font-size:.78rem}
+  .site-nav .nav-contact{margin:4px 0 4px 8px;padding:6px 12px}
+  .hero-copy{min-width:0}
+  .page-nav a{padding:9px 11px}
+}
+@media(prefers-reduced-motion:reduce){
+  .spotlight{display:none}
+  *,*::before,*::after{animation:none!important}
+}
+@media print{
+  @page{margin:16mm}
+  :root{--text-primary:#111;--text-secondary:#333;--text-muted:#444;--accent:#174a80;--border:#ddd;--bg-primary:#fff;--bg-surface:#fff;--bg-elevated:#fff}
+  site-header,site-footer,.skip-link,.page-nav,.publication-actions,.cv-actions,body::after{display:none!important}
+  a{color:#111!important;text-decoration:none}
+  h1,h2,h3,h4{break-after:avoid}
+  .cv-section{break-inside:auto}
+  .cv-section-heading{break-after:avoid}
+  .cv-entry,.cv-featured-list article,.reference-item{break-inside:avoid}
+  .cv-keywords span{background:#fff!important}
+  .card,.publication,.stat-card{box-shadow:none!important;transform:none!important;background:#fff!important}
+  .cv-contact{display:block}
+}
+
+/* Compact news and a document-only CV landing page */
+.latest-section{padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:36px}
+.latest-section h2{font-size:.95rem;margin-bottom:10px}
+.news-list{list-style:none;padding:0;font-size:.84rem}
+.news-list li{display:grid;grid-template-columns:100px minmax(0,1fr);gap:16px;line-height:1.5}
+.news-list li+li{margin-top:7px}
+.news-date{font-size:.76rem;color:var(--text-muted);padding-top:1px}
+.news-list a{color:var(--text-primary);font-weight:600}
+.news-list a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.cv-download{max-width:620px}
+.cv-download .cv-file-note{font-size:.8rem;color:var(--text-muted);margin:14px 0 0}
+@media(max-width:480px){.news-list li{grid-template-columns:80px minmax(0,1fr);gap:10px}}
+
+.orcid-mark{font-size:.8rem;font-weight:700}
+.contact-methods{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:680px){.contact-methods{grid-template-columns:1fr}}
